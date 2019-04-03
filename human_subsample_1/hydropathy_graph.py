@@ -38,8 +38,8 @@ Threshold = int(Threshold)
 
 
 
-Value=[]
-window_counter= []
+Value_list=[]
+window_list= []
 #InSeqFileName = raw_input("Name of sequence file to analyze?\n")
 InSeqFile = open(InSeqFileName, 'r')
 LineNumber = 0
@@ -57,8 +57,8 @@ for i in range(len(ProtSeq)):
     Value+=Hydropathy[ProtSeq[i]]
     if(i>(window-1) and i<=(len(ProtSeq)-window)):
         Value=Value-Hydropathy[ProtSeq[i-window]]
-        window_counter = "%d"
-        Value = "%.2f"
+        window_list.append(window_counter)
+        Value_list.append(Value)
         #OutString = "%d,%.2f" % (window_counter, Value)
         #OutFile.write(OutString + "\n")
 
