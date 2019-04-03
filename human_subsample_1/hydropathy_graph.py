@@ -5,6 +5,11 @@
 
 import sys
 
+import numpy as np
+import time
+import sys
+from matplotlib import pyplot
+
 InFileName = "amino_acid_hydropathy_values.txt"
 InFile = open(InFileName, 'r')
 Data=[]
@@ -63,5 +68,13 @@ for i in range(len(ProtSeq)):
         #OutFile.write(OutString + "\n")
 
     window_counter+=1
+
+pyplot.plot(range(window_list),Value_list)
+pyplot.xlabel('window_list')
+pyplot.ylabel('Value_list')
+pyplot.savefig(`hydropathy.png`)
+pyplot.show()
+
+
 
 OutFile.close()
