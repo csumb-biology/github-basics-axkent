@@ -17,11 +17,26 @@ for Line in InFile:
     LineNumber = LineNumber + 1
 InFile.close()
 
-window = raw_input("Window size?")
+#window = raw_input("Window size?")
 window=int(window)
+for i in range(len(sys.argv)):
+    #if the argument is -i
+    if sys.argv[i] == "-i":
+        #the Fasta file is the next argument
+        Fasta = sys.argv[i+1]
+    #if the argument is -w
+    if sys.argv[i] == "-w":
+        #the Window value is the next argument
+        Window = sys.argv[i+1]
+
+#convert Window to an integer and ensure Window variable will be recognized as an integer
+Window = int(Window)
+#convert Threshold to an integer and ensure Threshold variable will be recognized as an integer
+Threshold = int(Threshold)
+
 Value=0
 window_counter=0
-InSeqFileName = raw_input("Name of sequence file to analyze?\n")
+#InSeqFileName = raw_input("Name of sequence file to analyze?\n")
 InSeqFile = open(InSeqFileName, 'r')
 LineNumber = 0
 
